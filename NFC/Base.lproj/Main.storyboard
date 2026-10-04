@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j6H-5s-JQ6">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NFC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="NFC" id="BYZ-38-t0r" customClass="ViewController" customModule="NFC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-SL-WVp">
+                                <rect key="frame" x="25" y="381" width="343" height="184"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enther the message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-BT-CaK">
+                                        <rect key="frame" x="30" y="50" width="283" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="QGf-iN-T1m"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-6d-b9S">
+                                        <rect key="frame" x="30" y="104" width="283" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="SEND">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="writeToTagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKm-0Y-3Qp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for recieved text!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iim-rE-j9O">
+                                        <rect key="frame" x="30" y="15" width="161.33333333333334" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.82490736249999996" blue="0.58058446649999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PtN-BT-CaK" secondAttribute="trailing" constant="30" id="2F7-yp-bUW"/>
+                                    <constraint firstItem="PtN-BT-CaK" firstAttribute="leading" secondItem="nPw-SL-WVp" secondAttribute="leading" constant="30" id="Jv7-G1-RGi"/>
+                                    <constraint firstItem="iim-rE-j9O" firstAttribute="leading" secondItem="nPw-SL-WVp" secondAttribute="leading" constant="30" id="M1Z-CJ-aMw"/>
+                                    <constraint firstItem="iim-rE-j9O" firstAttribute="top" secondItem="nPw-SL-WVp" secondAttribute="top" constant="15" id="VjG-fw-3Dy"/>
+                                    <constraint firstItem="hWX-6d-b9S" firstAttribute="leading" secondItem="nPw-SL-WVp" secondAttribute="leading" constant="30" id="WqR-eh-8H1"/>
+                                    <constraint firstItem="PtN-BT-CaK" firstAttribute="top" secondItem="nPw-SL-WVp" secondAttribute="top" constant="50" id="bPH-WW-jE3"/>
+                                    <constraint firstItem="hWX-6d-b9S" firstAttribute="top" secondItem="PtN-BT-CaK" secondAttribute="bottom" constant="20" id="ejE-S7-Ntu"/>
+                                    <constraint firstAttribute="bottom" secondItem="hWX-6d-b9S" secondAttribute="bottom" constant="50" id="jke-wt-KdO"/>
+                                    <constraint firstAttribute="trailing" secondItem="hWX-6d-b9S" secondAttribute="trailing" constant="30" id="oKO-08-yP7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nPw-SL-WVp" secondAttribute="trailing" constant="25" id="Z6z-jM-GHU"/>
+                            <constraint firstItem="nPw-SL-WVp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cgv-by-K2C"/>
+                            <constraint firstItem="nPw-SL-WVp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gse-ge-aY4"/>
+                            <constraint firstItem="nPw-SL-WVp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="sNh-V5-ONe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7sG-ZY-iB3"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="PtN-BT-CaK" id="jhc-hL-5TU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.5648854961833" y="-27.464788732394368"/>
+        </scene>
+        <!--NFC Writer-->
+        <scene sceneID="Wsz-NZ-cq8">
+            <objects>
+                <navigationController title="NFC Writer" automaticallyAdjustsScrollViewInsets="NO" id="j6H-5s-JQ6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnV-Dc-s0M">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="miC-vr-Yaf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgp-vU-dKE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
